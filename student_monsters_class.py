@@ -33,10 +33,16 @@ monster3 = StudentMonster('Bison', 3, 'C')
 monster4 = StudentMonster('Loopy', 4, 'D')
 
 
-student_monster_list = []
-student_monster_list.append(monster1.see_grade())
-student_monster_list.append(monster2.see_grade())
-student_monster_list.append(monster3.see_grade())
+student_monster_list_grades = []
+student_monster_list_grades.append(monster1.see_grade())
+student_monster_list_grades.append(monster2.see_grade())
+student_monster_list_grades.append(monster3.see_grade())
+
+student_monster_list_names = []
+student_monster_list_names.append(monster1.name)
+student_monster_list_names.append(monster2.name)
+student_monster_list_names.append(monster3.name)
+
 
 # probably meant to use a separate run file and import the attributes etc form a bunch of different classes/files
 
@@ -46,7 +52,7 @@ student_monster_list.append(monster3.see_grade())
 # print(monster1.skill_list
 # print(monster4.see_grade())
 # print(monster1.__grade) Why does this not work, do you have to use get()?
-for grade in student_monster_list:
+for grade in student_monster_list_grades:
     print(grade)
 
 while True:
@@ -63,12 +69,13 @@ while True:
         grade = input('What is your grade?')
         print('Thanks give us a minute!')
         new_monster = StudentMonster(name, id, grade)
-        student_monster_list.append(new_monster)
+        student_monster_list_names.append(new_monster.name)
     break
 
 
 monster5 = new_monster.name
 
 
-print(monster5)
 
+print(monster5)
+print(student_monster_list_names)
